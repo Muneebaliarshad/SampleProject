@@ -11,12 +11,15 @@ import Alamofire
 
 
 //MARK: - Model
-struct UserResponceModel: Codable {
+struct APIResponse<T: Decodable>: Decodable {
     var isSuccess: Bool?
     var msg: String?
     var respCode: String?
-    var respData: UserModel?
+    var respData: T?
 }
+
+
+
 
 struct UserModel: Codable {
     var userId: String?
@@ -49,7 +52,7 @@ struct RegistrationAPIs {
             do {
                 let jsonData = Utility.json(from: result)
                 let jsonDecoder = JSONDecoder()
-                let dataSource = try jsonDecoder.decode(UserResponceModel.self, from: (jsonData?.data(using: .utf8)!)!)
+                let dataSource = try jsonDecoder.decode(APIResponse<UserModel>.self, from: (jsonData?.data(using: .utf8)!)!)
                 
                 if dataSource.isSuccess ?? false {
                     UserDefaultsManager.setUserModel(user: dataSource.respData!)
