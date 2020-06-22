@@ -1,0 +1,40 @@
+PODS:
+  - Alamofire (5.2.1)
+  - AlamofireImage (4.1.0):
+    - Alamofire (~> 5.1)
+  - AlamofireNetworkActivityIndicator (3.1.0):
+    - Alamofire (~> 5.1)
+  - HGPlaceholders (0.4.0)
+  - IQKeyboardManagerSwift (6.5.5)
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - AlamofireImage (~> 4.1)
+  - AlamofireNetworkActivityIndicator (~> 3.1)
+  - HGPlaceholders
+  - IQKeyboardManagerSwift
+  - NVActivityIndicatorView
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - AlamofireNetworkActivityIndicator
+    - HGPlaceholders
+    - IQKeyboardManagerSwift
+    - NVActivityIndicatorView
+
+SPEC CHECKSUMS:
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
+  AlamofireNetworkActivityIndicator: 6564782bd7b9e6c430ae67d9277af01907b01ca4
+  HGPlaceholders: fd580aaf6050782bf2ee51eb62ed499ded6615b7
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+
+PODFILE CHECKSUM: fb98f7d71fbeb89bd232f9e16344dd30463eb86a
+
+COCOAPODS: 1.9.3
