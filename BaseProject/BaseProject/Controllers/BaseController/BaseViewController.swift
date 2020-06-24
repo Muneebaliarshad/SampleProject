@@ -8,10 +8,9 @@
 
 import Foundation
 import UIKit
-import NVActivityIndicatorView
 
 
-class BaseViewController: UIViewController, NVActivityIndicatorViewable {
+class BaseViewController: UIViewController {
 
     //MARK: - Variables
     var leftSearchBarButtonItem : UIBarButtonItem?
@@ -70,21 +69,6 @@ class BaseViewController: UIViewController, NVActivityIndicatorViewable {
         }
         return 20
     }
-
-
-    //MARK:- Loader Methods
-    func startLoading(userInteractionEnabled:Bool = false){
-        self.view.isUserInteractionEnabled = userInteractionEnabled
-        self.view.showLoader()
-    }
-
-    func stopLoading(){
-        self.view.isUserInteractionEnabled = true
-        self.view.removeLoader()
-    }
-    
-    
-    //MARK:- Custom Alert
 
 
 }

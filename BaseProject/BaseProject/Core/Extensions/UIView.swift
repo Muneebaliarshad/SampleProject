@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import NVActivityIndicatorView
 
 
 extension UIView {
@@ -103,34 +102,6 @@ extension UIView {
         pulse.initialVelocity = 0.5
         pulse.damping = 1.0
         layer.add(pulse, forKey: "pulse")
-    }
-
-
-
-//------------------------------------------------------------------------------------
-    //MARK: - Loader Methods
-    func showLoader(loaderWidth: Int = 60, loaderHeight: Int = 60) {
-        let loadingView = UIView()
-        loadingView.frame = self.bounds
-        loadingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        loadingView.tag = 112233
-        
-        let activityIndicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: loaderWidth, height: loaderHeight), type:  NVActivityIndicatorType.circleStrokeSpin, color: .gray, padding: 0.0)
-        activityIndicator.center = self.center
-
-        activityIndicator.startAnimating()
-        loadingView.addSubview(activityIndicator)
-        self.addSubview(loadingView)
-    }
-
-    func removeLoader() {
-        DispatchQueue.main.async {
-            self.subviews.forEach { (view) in
-                if view.tag == 112233 {
-                    view.removeFromSuperview()
-                }
-            }
-        }
     }
     
 }

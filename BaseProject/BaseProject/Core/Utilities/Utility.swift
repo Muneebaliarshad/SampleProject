@@ -15,7 +15,7 @@ import LocalAuthentication
 class Utility : NSObject {
     
     //MARK: - variables
-    var progrssBar = UIProgressView()
+    static var loadingView: LoadingView?
     
     
 //------------------------------------------------------------------------------------
@@ -40,6 +40,7 @@ class Utility : NSObject {
     }
     
     
+//------------------------------------------------------------------------------------
     //MARK:- Time Conversion Methods
     // Get Formatted Hours : Minutes : Seconds from Integer
     final class func GetHMSFrom(seconds: Int) -> String {
@@ -170,5 +171,20 @@ class Utility : NSObject {
         topVC.view.addSubview(alertView)
         topVC.view.bringSubviewToFront(alertView)
         return alertView
+    }
+    
+    
+//---------------------------------------------------------------------------------------------------
+    //MARK: - Loading Methods
+    final class func startLoading() {
+        let topVC = getTopViewController()
+        let frame = CGRect(x: 0, y: 0 , width: topVC.view.frame.width, height: topVC.view.frame.height)
+        loadingView = LoadingView(frame: frame)
+        topVC.view.addSubview(loadingView ?? LoadingView())
+        topVC.view.bringSubviewToFront(loadingView ?? LoadingView())
+    }
+    
+    final class func stopLoading() {
+        loadingView?.removeFromSuperview()
     }
 }
