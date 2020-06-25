@@ -13,9 +13,9 @@ import UIKit
 let APPLE_LANGUAGE_KEY = "AppleLanguages"
 
 
-class RVLanguageManager {
+class LanguageManager {
     //MARK: - Variables
-    static var shared = RVLanguageManager()
+    static var shared = LanguageManager()
     
     var currentLanguage: String {
         let langArray = UserDefaults.standard.object(forKey: APPLE_LANGUAGE_KEY) as! NSArray
@@ -40,9 +40,9 @@ class RVLanguageManager {
 extension Bundle {
     @objc func myLocalizedString(forKey key: String, value: String?, table tableName: String?) -> String {
         if self == Bundle.main {
-            let currentLanguage = RVLanguageManager.shared.currentLanguageFull
+            let currentLanguage = LanguageManager.shared.currentLanguageFull
             var bundle = Bundle();
-            if let path = Bundle.main.path(forResource: RVLanguageManager.shared.currentLanguageFull, ofType: "lproj") {
+            if let path = Bundle.main.path(forResource: LanguageManager.shared.currentLanguageFull, ofType: "lproj") {
                 bundle = Bundle(path: path)!
             }else
                 if let path = Bundle.main.path(forResource: currentLanguage, ofType: "lproj") {

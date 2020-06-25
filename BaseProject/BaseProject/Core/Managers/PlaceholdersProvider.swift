@@ -9,14 +9,14 @@
 import HGPlaceholders
 
 
-class RVTableView: TableView {
+class MATableView: TableView {
     override func customSetup() {
         placeholdersProvider = .maProject
     }
 }
 
 
-class RVCollectionView: CollectionView {
+class MACollectionView: CollectionView {
     override func customSetup() {
         placeholdersProvider = .maProject
     }
